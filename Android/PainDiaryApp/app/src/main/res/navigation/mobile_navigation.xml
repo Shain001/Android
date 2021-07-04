@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home_fragment">
+    <fragment
+        android:id="@+id/nav_home_fragment"
+        android:name="com.example.fit5046_assignment3.fragment.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/nav_data_entry_fragment"
+        android:name="com.example.fit5046_assignment3.fragment.DataEntryFragment"
+        android:label="DataEntryFragment" />
+    <fragment
+        android:id="@+id/nav_report_fragment"
+        android:name="com.example.fit5046_assignment3.fragment.ReportFragment"
+        android:label="ReportFragment" >
+        <action
+            android:id="@+id/report_to_step_bar"
+            app:destination="@id/stepBarFragment" />
+        <action
+            android:id="@+id/report_to_step"
+            app:destination="@id/stepReportFragment" />
+        <action
+            android:id="@+id/report_to_weather"
+            app:destination="@id/painWeatherReportFragment" />
+        <action
+            android:id="@+id/action_nav_report_fragment_to_painLocationReportFragment"
+            app:destination="@id/painLocationReportFragment" />
+        <action
+            android:id="@+id/report_to_location"
+            app:destination="@id/locationReport" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_map_fragment"
+        android:name="com.example.fit5046_assignment3.fragment.MapFragment"
+        android:label="MapFragment" />
+    <fragment
+        android:id="@+id/nav_record_fragment"
+        android:name="com.example.fit5046_assignment3.fragment.RecordFragment"
+        android:label="RecordFragment" >
+        <action
+            android:id="@+id/record_to_edit"
+            app:destination="@id/editFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/stepBarFragment"
+        android:name="com.example.fit5046_assignment3.fragment.reports.StepBarFragment"
+        android:label="StepBarFragment" >
+        <action
+            android:id="@+id/step_bar_to_report"
+            app:destination="@id/nav_report_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/correlationReportFragment"
+        android:name="com.example.fit5046_assignment3.fragment.reports.CorrelationReportFragment"
+        android:label="CorrelationReportFragment" >
+        <action
+            android:id="@+id/correlation_to_weather"
+            app:destination="@id/painWeatherReportFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/painWeatherReportFragment"
+        android:name="com.example.fit5046_assignment3.fragment.reports.PainWeatherReportFragment"
+        android:label="PainWeatherReportFragment" >
+        <action
+            android:id="@+id/weather_to_report"
+            app:destination="@id/nav_report_fragment" />
+        <action
+            android:id="@+id/weather_to_correlation"
+            app:destination="@id/correlationReportFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/stepReportFragment"
+        android:name="com.example.fit5046_assignment3.fragment.reports.DailyStepReport"
+        android:label="StepReportFragment" >
+        <action
+            android:id="@+id/step_to_report"
+            app:destination="@id/nav_report_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="com.example.fit5046_assignment3.fragment.EditFragment"
+        android:label="EditFragment" >
+        <action
+            android:id="@+id/edit_to_record"
+            app:destination="@id/nav_record_fragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/dataEntryConfirmation"
+        android:name="com.example.fit5046_assignment3.fragment.DataEntryConfirmation"
+        android:label="DataEntryConfirmation" />
+    <fragment
+        android:id="@+id/painLocationReportFragment"
+        android:name="com.example.fit5046_assignment3.fragment.reports.Notwork"
+        android:label="PainLocationReportFragment" >
+        <action
+            android:id="@+id/action_painLocationReportFragment_to_nav_report_fragment"
+            app:destination="@id/nav_report_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/locationReport"
+        android:name="com.example.fit5046_assignment3.fragment.reports.LocationReport"
+        android:label="LocationReport" >
+        <action
+            android:id="@+id/action_locationReport_to_nav_report_fragment"
+            app:destination="@id/nav_report_fragment" />
+    </fragment>
+</navigation>
